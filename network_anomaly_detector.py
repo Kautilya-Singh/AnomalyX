@@ -1,6 +1,7 @@
 
 import pandas as pd
 import numpy as np
+import os
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.metrics import classification_report, confusion_matrix, accuracy_score
@@ -224,6 +225,7 @@ def evaluate_model(model, X_test, y_test):
 
 
 def save_model(model, encoders, scaler, path='models/'):
+    os.makedirs(path, exist_ok=True)
     joblib.dump(model, f'{path}anomaly_model.pkl')
     joblib.dump(encoders, f'{path}encoders.pkl')
     joblib.dump(scaler, f'{path}scaler.pkl')
