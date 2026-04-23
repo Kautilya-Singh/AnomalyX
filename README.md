@@ -49,15 +49,10 @@ Dataset/                       — NSL-KDD train/test files
 
 ```bash
 # Install dependencies
-cd Dataset
-pip install -r requirements.txt
+pip install -r Dataset\requirements.txt
 
 # Train the model (one-time)
-If your terminal is in AnomalyX:
 python train.py --train Dataset\KDDTrain+.txt --test Dataset\KDDTest+.txt
-
-If your terminal is in Dataset:
-python ..\train.py --train KDDTrain+.txt --test KDDTest+.txt
 
 # Start the app
 python app.py
